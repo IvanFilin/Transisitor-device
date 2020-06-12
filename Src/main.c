@@ -143,7 +143,7 @@ int main(void)
 		
 		// DAC
 		HAL_DAC_Start(&hdac, DAC_CHANNEL_1);// nachalo raboti
-		HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R,d);// podacha 2 volta
+		HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R,d);// podacha volt
 		HAL_Delay(100);
 		
 		// ADC-1
@@ -156,7 +156,7 @@ int main(void)
 		//ADC-2
 		HAL_ADC_Start(&hadc2);// vkluschenie preobrazovania ACD
 		HAL_ADC_PollForConversion (&hadc2,100);// gdem okonchanie processa
-		a2= -(float)(((((float)HAL_ADC_GetValue (&hadc2))*3.3/4095)/8.2-0.402)*1000);// predstavlenie v voltax
+		a2= -(float)(((((float)HAL_ADC_GetValue (&hadc2))*3.3/4095)/8.2-0.402)*1000);// predstavlenie v ampier
 		//u2= ((float)HAL_ADC_GetValue (&hadc2));// disckretnoe predstavlenie			
 		HAL_ADC_Stop(&hadc2);// ostanovka preobrazovania
 		
